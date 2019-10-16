@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Required javascript -->
+    <script type="text/javascript" src="/js/user_validation.js"></script>
+    <title>Log in</title>
+  </head>
+
+  <body>
+  <div class="wrapper">
+    <!--Invoking UserValidation function to user authentication -->
+    <!--after successful authentication redirect page to generate CSRF token -->
+    <form name="loginForm" action="CSRF_Token_Generator.php" onsubmit="return UserValidation();" method="post">
+      <input type="text" required="required" class="input-group mb-3" name="user_name" placeholder="User Name">
+      <br>
+      <input type="password" required="required" name="p_word" placeholder="Password">
+      <br>
+      <input type="submit"  class="btn btn-submit"value="Log In">
+    </form>
+  </div>
+  </body>
+</html>
